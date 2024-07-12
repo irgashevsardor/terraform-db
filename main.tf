@@ -23,7 +23,7 @@ resource "aws_kms_key" "db_key" {
 }
 
 resource "aws_db_instance" "mysql_db" {
-  allocated_storage             = 10
+  allocated_storage             = var.db_allocated_storage
   db_name                       = var.db_name
   db_subnet_group_name          = aws_db_subnet_group.db_subnet_group.name
   engine                        = "mysql"
